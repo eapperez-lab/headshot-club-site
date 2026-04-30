@@ -453,12 +453,12 @@ export default function TheHeadshotClubWebsite() {
           <div className="grid gap-4">
             <div className="rounded-3xl bg-[#F7F1EC] p-6 border border-black/5">
               <Icon type="users" className="w-8 h-8 text-[#C3542B] mb-4" />
-              <p className="font-bold text-2xl">Half Day — $2,200</p>
+              <p className="font-bold text-2xl">Half Day — $2,500</p>
               <p className="text-black/60">Up to 10 people</p>
             </div>
             <div className="rounded-3xl bg-[#F7F1EC] p-6 border border-black/5">
               <Icon type="users" className="w-8 h-8 text-[#C3542B] mb-4" />
-              <p className="font-bold text-2xl">Full Day — $3,200</p>
+              <p className="font-bold text-2xl">Full Day — $3,500</p>
               <p className="text-black/60">Up to 15 people</p>
             </div>
           </div>
