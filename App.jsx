@@ -1,1 +1,0 @@
-export default function TheHeadshotClubWebsite(){return <h1>The Headshot Club Live</h1>}
