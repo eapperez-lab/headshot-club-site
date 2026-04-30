@@ -1,6 +1,8 @@
 import React from "react";
 
 const BOOKING_LINK = "https://calendly.com/eapperez/20-min-headshot-photoshoot-clone";
+const CONTACT_EMAIL = "info@theheadshotclub.com";
+
 const BrandMark = ({ className = "" }) => (
   <div className={`relative flex items-center justify-center ${className}`} aria-hidden="true">
     <div className="absolute inset-0 rounded-[22%] bg-[#C3542B]" />
@@ -61,6 +63,12 @@ const Icon = ({ type, className = "" }) => {
         <circle cx="12" cy="13" r="3" />
       </>
     ),
+    mail: (
+      <>
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </>
+    ),
     sparkle: (
       <>
         <path d="M12 2 9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2z" />
@@ -119,15 +127,15 @@ const teamMembers = [
   },
 ];
 
-const recentWorkImages = [
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABzAE0DASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAECAwQF/8QAKhAAAgIBAwMDBAIDAAAAAAAAAAECEQMEEiExUXEiQVITQmGRMoEFFCP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEBAQEAAAAAAAAAAAAAAAAAAREC/9oADAMBAAIRAxEAPwDQAARQAAACGACEMAEIYgLAAAAjOcYK5OiRRCcZZ3bVrhBZA9TGKtwml4LITjkipRdpk24VUmvDMi/4atRi/Rk9uzJpY1CGBUIQxATAAADKsNzct1JvhGoyZbjPbw1d8slajTkxSck4SS78FeTFuzY2vsdsmpVDoo+GV4827M4Kr68+5Fq4AA0wQAAEgAUpKMXJ9ErAZn1GaEKW5Od8fg5+XPlyP1TddlwisYa6Sbyu5Phexnyz3ZXKPFdGTutJvvlqjNfA5jVrVDWTX8kpGnFmjl6cPsctMu089maL9ro1jLogAGQzNr57cKj8maTn66e7Mo/FFgy1wFcDEUS3v6Wz2uxWIaARJMi+o0UdeEt0Iy7oZTpJbtOvxwXGAHMi1lztyfV2b889mGb/ABRy06aZYNWbTendFepdvcyN8mvFqlFeqLXghqZYci3RtT8dSTYtxnFY6XYsx4JZHxaXdlRU2S2yq9rrwdCGnx44Wl6vk1ZRlUpp1qFNfF8ElXFugdwkuzNRj/x/3/0bC1CzYnPHKNXaOTLFkg6lCS/o7ogOE4y+L/Qmd+iLhGXWKflDRxtPNQyqUuhu+vi674/s0rT4k7WON+CTxwfWEf0SzVlxh/3MUpbbaXszPk3ZXTx3NfdFdTrfShf8I/olQNZNHglDDcuJSd0WtU6LhOKfUIYAAAMAAAAAAAAAAAA//9k=",
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABzAE0DASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAgQAAQMF/8QAJxAAAgIBBAEEAgMBAAAAAAAAAAECEQMEEiExQRMiUWEFcTOBkbH/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAZEQEBAQEBAQAAAAAAAAAAAAAAARECMRL/2gAMAwEAAhEDEQA/AOiQhAIUWQCiEIBRCygIQhACIWUBG6VnJ1etnKTUXtX7HNTq4Y4SS5fRycON5821f2BSnmk7Tl/pvHW58cdrfPy0PRwRhGkhTU44u0mt3wZ1r5Fi/JyTrKk18oew54ZlcXz8M4T4bs20mf0cyk729UaZdsgOPIskbQQGgMlcWvoIDJPauFbA4+syW3BcUDoZOORtK3Res/kfV+TLTX6qinV8Eviz10nmlPHLw14FqcYWo238jUcUcUJcpWZ4Jp2vCMtk8+L2bmqYujoZ/dYjODik/DNc1nqOp+OyboOL7SQ4cr8fljBtTT56fwdVO0VloBkXtsIy1OVYcTlVvwBxc8vfL9mUZOE1Jdp2a5Xy3w23bMWFdZZlPCpqO6+kYz9RNdK/AtpdT6b2yXtflD0pwivauX5MWY3LrKQlkyN3Hxusbk7E8kX6kuOC8p01075S+ztQ4icjSuO1pp2nd0dPTp+kr/o0wYE/yLuEI+Wxw5esyOWdrze1fSCwjNXKo2xjBoJz5yLavgfwaOGNJ1cvLGGqJoSnoIJJ41yvHyBVLa+Gvkfi/Bc4QmvdFMlmtS45cjTTYd0XOS4l0NrTYoytQ5+zShIWl8enjG2lV90bxjsVLoKSpIuisiOW09RrJbFw338Ie1Le1RtpS448/Qv+Ogk52+U6BDsuKJ2E1aoz5i+eiCpLa/ouy7UlRn06AMiKT4LQFz8BLoCQS6Az1K3YJLr7+DHR3Ke5KlGO1/bC1GTfCoypeWaaeKjiio9FGwM7rgtulyB6kX5IMn7unUl2gm90U/PkrJtbtPkqDu/sKKLCXYHTCsIJ9BLozsO6SA50W9w7pv4l+2QgWtJ89gMhAgJpV0Z4H/1kIFasiIQIsKXZCBX/2Q==",
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABzAE0DASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAIBAwUEBv/EACwQAAICAQMCBQMEAwAAAAAAAAECABEDBBIhMUEFEyJRYRQycUJSkcGBobH/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAGhEBAQEBAQEBAAAAAAAAAAAAAAERAhIhUf/aAAwDAQACEQMRAD8A04QhAIQhAIRTkRTRYAyQQRYNiBMIQgEIQgEIQgE5NXqCjeWnB7mdZIAJJoDqZkah7yu56XxJWuXVjTcOTAsdO9g2O4lCahxtC47vnvJ1ObISwOMUOpmMb1pAhgCOhkynRuH0qEe1S6dHIQhCAQkwgK670ZfcVMh1ONgCOAaImzOTXBAFsgEnp3Mliy4p3ouLcB+aEV8uLJvIO4UP5lWQsAFBAT8XET0sRYKVzxM43rT0IrTLxV2Z0Tm0GbztOP3LwROmbcxCEIBCTCBz6vUrpse48sftHvMPJmyZMpyObM0PEm07sG8wnIBVDkTPLK3HIhFiaxkXay2JGXUnIu0LtFynb7xkx8wtrr8OzjBl9Z9LCj8TYR1ddyMGHuJgVQkpkdDaMVPxDOt+EzMPiLqazAMPcdRNLG65EDoQVPeGjTN8T1LBhgQ1xbEf8mizBFLHoBZnn8uQ5czZD+o3CUldo5UBakCSx4qVlAAq+8axXSKBUngCFTf8yFNX7xT1gCTCA8zt8Nz+UuRT0JBE4Sew7Tr0Kq3mbu1f3IsdnimbZhGMdX6/iZmLC2UMR2FxtVnOfOz9ug+BLdL6cTHcOT9sX4s+1zOjY32tV/EgSzUG2BlRMQsymuFxDzUlQTwASYQExseNsrBVF/PYS/Dp6a8gv4l7htu1TsHuBJ6bnH64WXazKCDRqxLdIyJv31zVXBtOAtjIP8yoISSDxUus2WEk2RFsyCTCHLE9ZIle4yVbmBZ1P5neiqFAqZu8A9Y/1WXoaMlmt82RpcAcVEaci6pq9SmH1XP2kzOVv1F7lgOFRvi4aLCcxyGqqv7nM2bG3VCD8TT8KUrpi5/W3+pZGerrI1ChM+RVFANQErhCaYBi2YQgMAOI44hCEBkDpCECT0m/pQBpsQH7RCELH//Z",
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABzAEoDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAECAwQF/8QAJxAAAgIBAwMDBQEAAAAAAAAAAAECEQMSITEEQVETIjIjYXGRoYH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAXEQEBAQEAAAAAAAAAAAAAAAAAAREC/9oADAMBAAIRAxEAPwDMAwIEA3sCVq1wSIQ+9d/ANVySIBgSIBgSSKs069pcZMsvqsibdJLySi0/dO2lskQqWRppGzp+k1q57IDIphlipbt/rgt1Rk6k722Zon0UGriqZmnjli9rjfhAcRYBqtd6A1GaAACCZkzr635NZR1MfjLuRX9OkqNsHsc7HmUYqot13ui2HVyftjjcnV7GW9dFcEMsdUWq3MPq5p023vvSdItjHLOai8koxa3V3/SSmSTtR3rkgbYY1BSil7WzJJVJrwxjNhAACymU9Srgn4ZcKS1Ra8kVeGMGk5ck+nSj1ia2RTFywyce9EYzk8qcXuZadPKvSVqtN91wSxSjpvUm34Koa3C5d+bK8eOUZS1Kk1deCLT6kIXqdbmKT1Sb8snmdtO9uCC3GM2gB0FCyZGeSEPk9/BlydROey9q+xSRXZM+uSaVUWQcW1Kv0ZVyXQk4O0FMdHBkt+2P+jyz3pcszQ6nhRTvwaMMH85/J/wGjy4Yy6dxa3StP7nOOrllpxSfhM5IxnpNZJLiRL1pfYqA0yqESEBInB2RoCTTibhK0k/ybYTuN9znY8iSqTJ+u0mo/sMa1o6vOnD04u2+TG2KwGM26YWIQhEYg7AUqsjQ4sk1YhAaHQEghiQEjsQCp+SQF3YABIsiAEjZEAEAAAkTEAEX/9k=",
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABzAE0DASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAIDAQQF/8QAKhAAAgEDAwMDBQADAAAAAAAAAAECAxEhEjFBBCJRE2FxBTIzgaFikaGx/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQACA//EABkRAQEBAQEBAAAAAAAAAAAAAAABETECQf/aAAwDAQACEQMRAD8AWj0gBBCEBPqbmvbF/ZI2y6MOOr8I8Stu6qp4+g6KuCW+eMvpk6MZRccpphrWIKtRGfD9svA8XrKozXq1J7l4XUGnnugslqw0IAiGMYxIkxkYgJz7nmx/Z0CC5YsZJdSrFGPpKPTvyPSk3iUVnHYm09jjXn8HtWz3fOCf5MOuGela3n1cR/p7EizVqHFvjBQ7GmmpqXnBPc835/BQWK08owumWYfQw2wJgGJEoKAgkBIbMSskWTfGPJI48/yRM0s18JFFdU4SeyUsPwkQ4akmiuuyaWMszW4e6lDM5tuWO5C5b7Gw6m6cltyJgykFvxbpuYseS6fPYpFmiYBhRQUm2kllsBRpI5m5eCAvS4rbny+uDmyi1JJ9jutZWDlamrZb/sCQo+1N93wO6INVasrcX1XQMaZqWxptdmFaiSxOU/o0I5aLp6fbB46kUVtyn2Yj6fTnsUJ5JqFmWSkhWMYwgov08Nla8vkjrjvsjHyzoEnol1lXqV5XyRSeXywLk1WbLFl9C2MszhyDVaNTTlBe7/orTabUQ5bSXh8sismlsy/s5NvuseFhN5OxOP6TXfBzK6bN7lZFvPCJNTFrDS4a5Hjaa41QfqSXTCQkhRMAwg3RxzNy8IrOfVdKr44w+zKIardxKH8phTFB5bxI8+tHwxVlubFh7VjuWnFCYcomVjfxyz2tzeGQMcsv8ITfJcRXcZlRjz8V1JYyc5ub7sKYM+iPAy1YwLGcXrrGMYWSxlfcWj3V1YVrz04Ne1y5jlgPDbVnDaMzrV4r2t/2r8A9kV1SX2S2yfpvl/5OZZOTbzJv7Zph1b9VW2qoNSb8dgUcp/ZzKf3YfZ0qOr+yp8vV/VChl3VCynBesYBhD//Z",
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABqAFUDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAQMEAAUC/8QAKxAAAgIBAwMEAQMFAAAAAAAAAAECAxEEEiExQVETIjJxYSMzgVJikaGx/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQACA//EABkRAQEBAQEBAAAAAAAAAAAAAAABETECQf/aAAwDAQACEQMRAD8AWj0gBBCEBPqbmvbF/ZI2y6MOOr8I8Stu6qp4+g6KuCW+eMvpk6MZRccpphrWIKtRGfD9svA8XrKozXq1J7l4XUGnnugslqw0IAiGMYxIkxkYgJz7nmx/Z0CC5YsZJdSrFGPpKPTvyPSk3iUVnHYm09jjXn8HtWz3fOCf5MOuGela3n1cR/p7EizVqHFvjBQ7GmmpqXnBPc835/BQWK08owumWYfQw2wJgGJEoKAgkBIbMSskWTfGPJI48/yRM0s18JFFdU4SeyUsPwkQ4akmiuuyaWMszW4e6lDM5tuWO5C5b7Gw6m6cltyJgykFvxbpuYseS6fPYpFmiYBhRQUm2kllsBRpI5m5eCAvS4rbny+uDmyi1JJ9jutZWDlamrZb/sCQo+1N93wO6INVasrcX1XQMaZqWxptdmFaiSxOU/o0I5aLp6fbB46kUVtyn2Yj6fTnsUJ5JqFmWSkhWMYwgov08Nla8vkjrjvsjHyzoEnol1lXqV5XyRSeXywLk1WbLFl9C2MszhyDVaNTTlBe7/orTabUQ5bSXh8sismlsy/s5NvuseFhN5OxOP6TXfBzK6bN7lZFvPCJNTFrDS4a5Hjaa41QfqSXTCQkhRMAwg3RxzNy8IrOfVdKr44w+zKIardxKH8phTFB5bxI8+tHwxVlubFh7VjuWnFCYcomVjfxyz2tzeGQMcsv8ITfJcRXcZlRjz8V1JYyc5ub7sKYM+iPAy1YwLGcXrrGMYWSxlfcWj3V1YVrz04Ne1y5jlgPDbVnDaMzrV4r2t/2r8A9kV1SX2S2yfpvl/5OZZOTbzJv7Zph1b9VW2qoNSb8dgUcp/ZzKf3YfZ0qOr+yp8vV/VChl3VCynBesYBhD//Z",
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABzAE0DASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAEDBAUC/8QAKRAAAgIBAwMDAwUAAAAAAAAAAAECEQMEITEFElETImEyQXEzUmKhwf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABcRAQEBAQAAAAAAAAAAAAAAAAABQTH/2gAMAwEAAhEDEQA/ALlCo6AiuaFR2IDmhUdABzQUMRAgGICYQxFQCAApCK2o1ixtwxx75rn4Io9QlGSWbF2/KAvCBNSipRdp8MAAQABMIAKgIs8+zDKSdNLYkK2vV6dvw7IIumyioStXKTts41j9aL9lJcMfTst4ZYlynY9RJxwuMvtx8mdbnC6blbxvFLmO6/BdKHT2nknPfikXzTJAAASAILKhlXV6nFjTxyTk2uEWLMPLJzySk/uwHhzPHmjkW1cl3VKPb6juSv8AozS9jl6mmfmKdma1FnBPHlxN4oqKitq/0ljK4p+UZvTpuGoUU/bPZovY5X3R/a6B1LYWc2FlRJYAAQppyhJJ02tmYb8G6ZGrio6maXmyiuTYJ9sci8xIQTAs9Pjeqj8Jsuw/VyfLsz9Nn9DK59qlaqifHqXk1Uaj2p2TVxdAAAlAACAyNXLv1M34dGpkmseOU3wkY0pOUm3y3ZRyxLlIb3YuGBLLCoxvup/JY0unnDJ3zSVLZWU5y73dJfgv6XMp44xb96VV5CrICGQTWFnFhZULUS7cGR/xZjGnrZVp2vLSM1rYDlcifI73E+QAFadrZjQUBoaXP6sal9a5+SazKhKUJKUXujQxZo5Y3dP7oCcAACtr37IfkpAAHI8f1MAFI6mlszkAEKBMAA//2Q==",
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACweISchHCwnJCcyLyw1Qm9IQj09QohhZlBvoY2ppp6Nm5ixx//Ysbzxv5ib3v/g8f//////rNX/////////////2wBDAS8yMkI6QoJISIL/t5u3////////////////////////////////////////////////////////////////////wAARCABtAFUDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBAEF/8QAKBAAAgIBAwMEAQUAAAAAAAAAAAECAxEEEiExQVEiM2FxEwUycpGh/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAfEQEBAAMAAgIDAAAAAAAAAAAAAQIRMQMhIkESMlH/2gAMAwEAAhEDEQA/AM50AydgAcbwssA6MryZJzc38ESvxZXy/wAbQZYWOD8rwaU1JJruKzS8cpk6ACVgAGAAAQUXyeMdi8p1HRDnU5/qjp63ZLhZSLp6bGa8PcuVJdPo06OGaoTz27FzrjapKXke2Enp4865QeJItok+YPsadSob4x4S75Mm9K+UorhvgOw58btoAXKBDpAAAAAMBXdFNZ6YLAEKzc0loZyVcoNfKyaYuazmKjH4MUrVBpReZdjbKudkUnLgbGyT0w6qW7G1NvJVXVJyy+F8m3U0qGnbT27e5kptz6ZPnsx+9CauXtcACG4ABgAABC2zYuOrM8rJS6yO2y3TfhcEC5HNnlbU6lm2C8yR7iyljj7PDq96H8kel+pX/jr/ABRfqn1+EFTGPWal3y2x4hHp8/JmAGS6u7tP+y8xF1E3na+nYmxrhn9VeACWwck9sW/COld7xX9hCt1NswANHI7F4kn4eSd9srrZWS6v/CsAAAAAnT7iIE6fcQXisexpABm6nSjUPlLwXGa73GPHrPyX4oAAtzgAAAAABOn3EQJ0r1/QXisexoBwGbpSMtrzYzUZJ/vl9lYs/LxwAFMAAAAAAAuqjiOX1ZXVFSlz2LxWtcMft0HAS1f/2Q=="
+const galleryTiles = [
+  "bg-gradient-to-br from-[#ead8cf] via-[#f7f1ec] to-[#111111]",
+  "bg-gradient-to-br from-[#C3542B] via-[#f7f1ec] to-[#d6aa91]",
+  "bg-gradient-to-br from-[#111111] via-[#6f6b66] to-[#F7F1EC]",
+  "bg-gradient-to-br from-[#f3e7df] via-[#C3542B] to-[#111111]",
+  "bg-gradient-to-br from-[#F7F1EC] via-[#cdb8ab] to-[#5f554f]",
+  "bg-gradient-to-br from-[#111111] via-[#C3542B] to-[#F7F1EC]",
+  "bg-gradient-to-br from-[#e7d7cc] via-[#967466] to-[#111111]",
+  "bg-gradient-to-br from-[#C3542B] via-[#ddcabf] to-[#f7f1ec]",
 ];
 
 const SmokeTests = () => {
@@ -138,11 +146,8 @@ const SmokeTests = () => {
     { name: "External icon dependency removed", pass: typeof Icon === "function" },
     { name: "Booking link is Calendly", pass: BOOKING_LINK.includes("20-min-headshot-photoshoot-clone") },
     { name: "Session includes four benefits", pass: sessionIncludes.length === 4 },
-    { name: "Recent work images are unique", pass: new Set(recentWorkImages).size === recentWorkImages.length },
-    { name: "Recent work gallery has eight images", pass: recentWorkImages.length === 8 },
     { name: "Team has two founders", pass: teamMembers.length === 2 },
-    { name: "About section includes Adam", pass: teamMembers.some((member) => member.name === "Adam Perez") },
-    { name: "About section includes Erika", pass: teamMembers.some((member) => member.name === "Erika Perez") },
+    { name: "Contact email is set", pass: CONTACT_EMAIL === "info@theheadshotclub.com" },
   ];
 
   return (
@@ -180,6 +185,7 @@ const ButtonLink = ({ href, children, variant = "primary", external = false }) =
 
 export default function TheHeadshotClubWebsite() {
   const bookingLink = BOOKING_LINK;
+  const emailLink = `mailto:${CONTACT_EMAIL}`;
 
   return (
     <main className="min-h-screen bg-[#F7F1EC] text-[#111111] font-sans">
@@ -202,6 +208,7 @@ export default function TheHeadshotClubWebsite() {
           <nav className="hidden md:flex items-center gap-6 text-sm font-bold">
             <a href="#about" className="hover:text-[#C3542B] transition">About</a>
             <a href="#pricing" className="hover:text-[#C3542B] transition">Pricing</a>
+            <a href="#contact" className="hover:text-[#C3542B] transition">Contact</a>
             <a
               href={bookingLink}
               target="_blank"
@@ -299,17 +306,12 @@ export default function TheHeadshotClubWebsite() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[220px] md:auto-rows-[260px] gap-4">
-            {recentWorkImages.map((src, index) => (
+            {galleryTiles.map((tile, index) => (
               <div
-                key={src}
-                className={`group relative overflow-hidden rounded-[1.75rem] bg-white shadow-sm border border-black/5 ${index === 0 || index === 4 ? "md:row-span-2" : ""}`}
+                key={tile}
+                className={`group relative overflow-hidden rounded-[1.75rem] shadow-sm border border-black/5 ${tile} ${index === 0 || index === 4 ? "md:row-span-2" : ""}`}
               >
-                <img
-                  src={src}
-                  alt={`Headshot example ${index + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover transition duration-500 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(255,255,255,.9),rgba(255,255,255,.18)_32%,rgba(0,0,0,.35)_100%)] transition duration-500 ease-out group-hover:scale-105" />
                 <div className="absolute bottom-4 left-4 right-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition">
                   <p className="text-white text-sm font-bold">Headshot Club Select {index + 1}</p>
                 </div>
@@ -453,12 +455,12 @@ export default function TheHeadshotClubWebsite() {
           <div className="grid gap-4">
             <div className="rounded-3xl bg-[#F7F1EC] p-6 border border-black/5">
               <Icon type="users" className="w-8 h-8 text-[#C3542B] mb-4" />
-              <p className="font-bold text-2xl">Half Day — $2,500</p>
+              <p className="font-bold text-2xl">Half Day — $2,200</p>
               <p className="text-black/60">Up to 10 people</p>
             </div>
             <div className="rounded-3xl bg-[#F7F1EC] p-6 border border-black/5">
               <Icon type="users" className="w-8 h-8 text-[#C3542B] mb-4" />
-              <p className="font-bold text-2xl">Full Day — $3,500</p>
+              <p className="font-bold text-2xl">Full Day — $3,200</p>
               <p className="text-black/60">Up to 15 people</p>
             </div>
           </div>
@@ -482,6 +484,31 @@ export default function TheHeadshotClubWebsite() {
         </div>
       </section>
 
+      <section id="contact" className="py-20 bg-[#F7F1EC]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="rounded-[2rem] bg-white p-8 md:p-12 border border-black/10 shadow-lg grid md:grid-cols-[1fr_auto] gap-8 items-center">
+            <div>
+              <p className="text-[#C3542B] uppercase tracking-[0.25em] font-bold text-sm mb-3">Contact us</p>
+              <h2 className="font-serif text-4xl md:text-5xl font-black mb-4">Questions before you book?</h2>
+              <p className="text-lg text-black/70 leading-relaxed max-w-2xl">
+                Email us for team bookings, pop-up inquiries, partnership ideas, or help choosing the right headshot session.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 md:items-end">
+              <a
+                href={emailLink}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-bold bg-[#111111] text-white hover:bg-[#C3542B] transition"
+              >
+                <Icon type="mail" className="w-5 h-5" /> Email Us
+              </a>
+              <a href={emailLink} className="text-[#C3542B] font-bold text-lg hover:underline">
+                {CONTACT_EMAIL}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-[#111111] text-white py-10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -491,11 +518,19 @@ export default function TheHeadshotClubWebsite() {
             <div>
               <p className="font-serif text-2xl font-black">The Headshot Club</p>
               <p className="text-white/50 text-sm">Fast sessions. Strong impact. Look like your best self.</p>
+              <a href={emailLink} className="text-[#C3542B] text-sm font-bold hover:underline">
+                {CONTACT_EMAIL}
+              </a>
             </div>
           </div>
-          <a href={bookingLink} target="_blank" rel="noreferrer" className="text-[#C3542B] font-bold">
-            Book your session →
-          </a>
+          <div className="flex flex-col md:items-end gap-2">
+            <a href={bookingLink} target="_blank" rel="noreferrer" className="text-[#C3542B] font-bold">
+              Book your session →
+            </a>
+            <a href="#contact" className="text-white/60 text-sm hover:text-white transition">
+              Contact us
+            </a>
+          </div>
         </div>
       </footer>
     </main>
