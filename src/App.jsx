@@ -410,7 +410,7 @@ export default function TheHeadshotClubWebsite() {
                 Individual Session
               </p>
               <div className="flex items-end gap-3 mb-6">
-                <p className="font-serif text-6xl font-black">$225</p>
+                <p className="font-serif text-6xl font-black">$175</p>
                 <p className="pb-3 text-black/50 font-bold">per session</p>
               </div>
               <ul className="grid sm:grid-cols-2 gap-3 mb-8">
